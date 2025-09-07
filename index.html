@@ -24,6 +24,7 @@
 
     <!-- Own css -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/responsive-style.css" />
   </head>
   <body>
     <!-- Navbar start -->
@@ -120,7 +121,8 @@
         Choose Your Trees
       </h4>
 
-      <div class="column-section px-10 flex justify-between">
+      <div class="column-section px-4 md:px-10 flex gap-6">
+        <!-- Categories Section -->
         <div class="categories-section">
           <h4 class="font-bold text-[1.2rem]">Categories</h4>
 
@@ -132,23 +134,42 @@
           </div>
         </div>
 
-        <div class="card-section grid grid-cols-3 gap-4" id="card-section">
+        <!-- Card Section -->
+        <div
+          class="card-section grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"
+          id="card-section"
+        >
           <!-- all card section -->
         </div>
 
-        <div class="cart-section bg-white w-[180px] rounded-xl px-3 pt-3">
+        <!-- Cart Section -->
+        <div class="cart-section bg-white lg:w-[190px] rounded-xl px-3 pt-3">
           <h4 class="font-bold text-[1.2rem]">Your Cart</h4>
 
-          <div id="add-to-cart-section my-2"></div>
+          <div id="add-to-cart-section" class="my-2"></div>
 
           <hr class="text-gray-300" />
 
-          <div>
+          <div class="flex justify-between">
             <p>Total:</p>
-            <div id="total"></div>
+            <div id="total">৳ 0.00</div>
           </div>
         </div>
       </div>
+
+      <!-- Open the modal using ID.showModal() method  start -->
+      <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="image-section"></div>
+          <div class="modal-action">
+            <form method="dialog">
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      <!-- Oen modal usingId end -->
     </section>
     <!-- Main section end -->
 
