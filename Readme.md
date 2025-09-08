@@ -86,9 +86,10 @@ Destructuring means separating values ​​from an array or object and taking t
         const name = "Shamim";
         const age = 22;
 
-        const info = "My name is " + name + " and I am " + age + " years old.";
+        const info = `My name is ${name} and I am ${age} years old.`;
         console.log(info);
         // Output: My name is Shamim and I am 22 years old.
+
 
 
 
