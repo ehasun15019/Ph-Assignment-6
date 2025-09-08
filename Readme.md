@@ -29,4 +29,32 @@
             arr.push(4); // ✅ allowed (mutation)
             console.log(arr); // [1, 2, 3, 4]
 
+2.
+    (a) map(): Creates a new array by applying a function to each element.
+
+        Example: 
+
+            const nums = [1, 2, 3];
+            const doubled = nums.map(n => n * 2);
+            console.log(doubled); // [2, 4, 6];
+
+
+    (b) forEach(): Executes a function for each element but returns nothing.
+
+        Example: 
+
+            const nums = [1, 2, 3];
+            nums.forEach(n => console.log(n * 2)); // 2, 4, 6
+
+
+    (c) filter(): Creates a new array with elements that pass a condition.
+
+        Example: 
+
+                const nums = [1, 2, 3, 4, 5];
+                const evens = nums.filter(n => n % 2 === 0);
+                console.log(evens); // [2, 4]
+
+
+
 
