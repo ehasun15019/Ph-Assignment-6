@@ -116,12 +116,12 @@
     <!-- Header end -->
 
     <!-- Main section start -->
-    <section class="main-sec py-8" id="main-sec">
+    <section class="main-sec py-8 h-auto" id="main-sec">
       <h4 class="text-center font-semibold text-[1.2rem] mb-6">
         Choose Your Trees
       </h4>
 
-      <div class="column-section px-4 md:px-10 flex gap-6">
+      <div class="column-section px-4 md:px-10 flex gap-6 justify-between">
         <!-- Categories Section -->
         <div class="categories-section">
           <h4 class="font-bold text-[1.2rem]">Categories</h4>
@@ -133,6 +133,15 @@
             <!-- category button implement -->
           </div>
         </div>
+
+        <!-- loading section start -->
+        <section
+          class="spiner-section flex justify-center items-center py-3"
+          id="loading"
+        >
+          <span class="loading loading-ring loading-xl text-green-800"></span>
+        </section>
+        <!-- loading section end -->
 
         <!-- Card Section -->
         <div
@@ -159,8 +168,11 @@
 
       <!-- Open the modal using ID.showModal() method  start -->
       <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <dialog
+        id="my_modal_5"
+        class="modal modal-bottom sm:modal-middle flex items-center justify-center"
+      >
+        <div class="modal-box w-[280px] sm:w-auto">
           <div id="image-section"></div>
           <div class="modal-action">
             <form method="dialog">

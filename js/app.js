@@ -21,13 +21,14 @@ allTressData();
 const cardSection = document.getElementById("card-section");
 
 const showAllTress = (allTress) => {
+  manageLoading(true);
   cardSection.innerHTML = "";
 
   allTress.forEach((tree) => {
     const tressDiv = document.createElement("div");
 
     tressDiv.innerHTML = `
-      <div class="card bg-base-100 w-[290px] shadow-sm p-4">
+      <div class="card bg-base-100 w-[290px] shadow-sm p-4 h-[450px]">
         <img src="${tree.image}" alt="Tree" class="h-[200px] w-full object-cover rounded-xl" />
         <div class="card-body p-0 pt-3">
           <h5 class="card-title cursor-pointer tree-name" onclick="loadingModals(${tree.id})">${tree.name}</h5>
@@ -53,6 +54,7 @@ const showAllTress = (allTress) => {
 
     cardSection.appendChild(tressDiv);
   });
+  manageLoading(false);
 };
 // show all trees functionality end
 
@@ -71,14 +73,14 @@ const showModal = (plant) => {
   const imageBox = document.getElementById("image-section");
 
   imageBox.innerHTML = `
-  <div class="p-6 rounded-lg">
+  <div class="lg:p-6 sm:p-2 rounded-lg">
     <div class="image-sec">
       <img src="${plant.image}" class="w-full h-[200px] object-cover rounded-lg">
     </div>
 
     <div class="description mt-2">
       <p class="pb-2"><span class="font-semibold">Category: </span>${plant.category}</p>
-      <p class="pb-2"><span class="font-semibold">Price: </span>${plant.price}</p>
+      <p class="pb-2"><span class="font-semibold">Price: </span>${plant.price} tk</p>
       <p class="pb-2"><span class="font-semibold">Description: </span>${plant.description}</p>
     </div>
   </div>
@@ -87,6 +89,18 @@ const showModal = (plant) => {
   document.getElementById("my_modal_5").showModal();
 };
 // show modal functionality end
+
+// show loading functionality start
+const manageLoading = (status) => {
+  if (status === true) {
+    document.getElementById("loading").classList.remove("hidden");
+    document.getElementById("card-section").classList.add("hidden");
+  } else {
+    document.getElementById("loading").classList.add("hidden");
+    document.getElementById("card-section").classList.remove("hidden");
+  }
+};
+// show loading functionality end
 
 // show categories Data Fetch start
 const categoriesData = () => {
@@ -185,7 +199,7 @@ function addToCart(tree) {
 
   itemDiv.innerHTML = `
     <div>
-      <p class="text-[0.9rem]">${tree.category}</p>
+      <p class="text-[0.9rem]">${tree.name}</p>
       <p class="text-[0.8rem]">
         <i class="fa-solid fa-bangladeshi-taka-sign"></i> ${tree.price}
       </p>
@@ -208,6 +222,7 @@ function addToCart(tree) {
   // Update total
   total += tree.price;
   updateTotal();
+  alert(`${tree.name} added to cart successfully!`);
 }
 
 function updateTotal() {
